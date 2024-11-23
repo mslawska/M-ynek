@@ -1,16 +1,13 @@
 import sac.game.GameState;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
-        // Utworzenie początkowego stanu gry
+
         Mlynek startState = new Mlynek();
 
-        // Ustawienie pionków zgodnie z planszą na zdjęciu
-        // 1 = biały (W), 2 = czarny (B)
         startState.setPiece(0, 0, (byte) 1);
         startState.setPiece(0, 3, (byte) 1);
         startState.setPiece(1, 4, (byte) 1);
@@ -25,11 +22,9 @@ public class Main {
         startState.setPiece(1, 0, (byte) 2);
         startState.setPiece(2, 5, (byte) 2);
 
-        // Wyświetlenie początkowej planszy
         System.out.println("Początkowa plansza:");
         System.out.println(startState);
 
-        // Wywołanie funkcji liczącej liczbę stanów dla różnych głębokości
         for (int depth = 1; depth <= 6; depth++) {
             long statesCount = countStatesAtDepth(startState, depth);
             System.out.println("Głębokość: " + depth + ", liczba stanów: " + statesCount);

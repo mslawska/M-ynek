@@ -14,7 +14,7 @@ public class Mlynek extends GameStateImpl {
         board = new byte[3][8]; //plansza
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 8; j++) {
-                board[i][j] = '.'; //puste pola
+                board[i][j] = 0; //puste pola
             }
         }
     }
